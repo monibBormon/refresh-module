@@ -1,9 +1,9 @@
-import express from "express";
+import cookieParser from "cookie-parser";
 import cors from "cors";
+import express from "express";
 import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import mongoose from "mongoose";
-import cookieParser from "cookie-parser";
 import router from "./src/routes/api.js";
 
 import {
@@ -19,7 +19,9 @@ import {
 const app = express();
 
 // App Use Default Middleware
-app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
+app.use(
+  cors({ credentials: true, origin: "https://refresh-module.vercel.app" })
+);
 app.use(express.json({ limit: MAX_JSON_SIZE }));
 
 app.use(express.urlencoded({ extended: URL_ENCODE }));

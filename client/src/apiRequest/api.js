@@ -2,7 +2,7 @@ import axios from "axios";
 import { DeleteAlert, ErrorToast, SuccessToast } from "../helper/helper";
 
 // let baseURL = "http://localhost:5000/api";
-let baseURL = "https://refresh-modules-mern-7.vercel.app/api";
+let baseURL = "https://refresh-module-28uk.vercel.app/api";
 
 class ApiCall {
   async register(reqBody) {
