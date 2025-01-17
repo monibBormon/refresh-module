@@ -19,7 +19,7 @@ import {
 const app = express();
 
 // App Use Default Middleware
-app.use(cors());
+// app.use(cors());
 app.use(
   cors({
     origin: "https://refresh-module.vercel.app",
@@ -27,6 +27,8 @@ app.use(
     credentials: true,
   })
 );
+app.options("*", cors());
+
 app.use(express.json({ limit: MAX_JSON_SIZE }));
 
 app.use(express.urlencoded({ extended: URL_ENCODE }));
