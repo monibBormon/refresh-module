@@ -1,7 +1,8 @@
 import axios from "axios";
 import { ErrorToast, SuccessToast } from "../helper/helper";
 
-let baseURL = "http://localhost:5000/api";
+// let baseURL = "http://localhost:5000/api";
+let baseURL = "https://refresh-module-28uk.vercel.app/api";
 
 export const registerOne = async (reqBody) => {
   let result = await axios.post(`${baseURL}/register`, reqBody);

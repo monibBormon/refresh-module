@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
 import {
   createProduct,
@@ -9,7 +9,8 @@ import {
 } from "../apiRequest/api";
 import { ErrorToast, IsEmpty } from "../helper/helper";
 const Dashboard = () => {
-  let baseURL = "http://localhost:5000/upload-file/";
+  // let baseURL = "http://localhost:5000/upload-file/";
+  let baseURL = "https://refresh-module-28uk.vercel.app/upload-file/";
   const [file, setFile] = useState(null);
   const [product, setProduct] = useState([]);
   let [data, setData] = useState({
@@ -78,13 +79,13 @@ const Dashboard = () => {
   return (
     <>
       {/* nav bar */}
-      <nav className='bg-gray-600 h-[80px] flex justify-center items-center'>
-        <h2 className='text-white font-semibold text-[40px]'>
+      <nav className="bg-gray-600 h-[80px] flex justify-center items-center">
+        <h2 className="text-white font-semibold text-[40px]">
           Welcome to our dashboard
         </h2>
       </nav>
       <br />
-      <div className='container mx-auto'>
+      <div className="container mx-auto">
         <Tabs>
           <TabList>
             <Tab>Add product</Tab>
@@ -97,67 +98,67 @@ const Dashboard = () => {
             <br />
 
             <div>
-              <div className='grid grid-cols-12 gap-[30px]'>
-                <div className='col-span-4'>
-                  <label className='text-[14px] font-bold'>Product name:</label>
-                  <div className='relative'>
+              <div className="grid grid-cols-12 gap-[30px]">
+                <div className="col-span-4">
+                  <label className="text-[14px] font-bold">Product name:</label>
+                  <div className="relative">
                     <input
                       onChange={(e) =>
                         setData({ ...data, productName: e.target.value })
                       }
-                      className='w-full rounded-lg border border-gray-600 p-4 pe-12 text-sm shadow-sm '
-                      type='text'
+                      className="w-full rounded-lg border border-gray-600 p-4 pe-12 text-sm shadow-sm "
+                      type="text"
                     />
                   </div>
                 </div>
-                <div className='col-span-4'>
-                  <label className='text-[14px] font-bold'>
+                <div className="col-span-4">
+                  <label className="text-[14px] font-bold">
                     Product price:
                   </label>
-                  <div className='relative'>
+                  <div className="relative">
                     <input
                       onChange={(e) =>
                         setData({ ...data, productPrice: e.target.value })
                       }
-                      className='w-full rounded-lg border border-gray-600 p-4 pe-12 text-sm shadow-sm '
-                      type='text'
+                      className="w-full rounded-lg border border-gray-600 p-4 pe-12 text-sm shadow-sm "
+                      type="text"
                     />
                   </div>
                 </div>
-                <div className='col-span-4'>
-                  <label className='text-[14px] font-bold'>
+                <div className="col-span-4">
+                  <label className="text-[14px] font-bold">
                     Product description:
                   </label>
-                  <div className='relative'>
+                  <div className="relative">
                     <input
                       onChange={(e) =>
                         setData({ ...data, productDes: e.target.value })
                       }
-                      className='w-full rounded-lg border border-gray-600 p-4 pe-12 text-sm shadow-sm '
+                      className="w-full rounded-lg border border-gray-600 p-4 pe-12 text-sm shadow-sm "
                     />
                   </div>
                 </div>
-                <div className='col-span-4'>
-                  <label className='text-[14px] font-bold'>
+                <div className="col-span-4">
+                  <label className="text-[14px] font-bold">
                     Product image:
                   </label>
                   <form onSubmit={fileUploadFun}>
-                    <div className='relative'>
+                    <div className="relative">
                       <input
                         onChange={(e) => setFile(e.target.files[0])}
-                        type='file'
+                        type="file"
                       />
-                      <button type='submit'>Upload</button>
+                      <button type="submit">Upload</button>
                     </div>
                   </form>
                 </div>
               </div>
 
-              <div className='flex items-center justify-between mt-3'>
+              <div className="flex items-center justify-between mt-3">
                 <button
                   onClick={submitData}
-                  className='inline-block rounded-lg bg-purple-600 px-5 py-3 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50'
-                  type='submit'
+                  className="inline-block rounded-lg bg-purple-600 px-5 py-3 text-sm font-medium text-white focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50"
+                  type="submit"
                 >
                   Add product
                 </button>
@@ -169,24 +170,24 @@ const Dashboard = () => {
           <TabPanel>
             <>
               {/* component */}
-              <div className='relative overflow-x-auto shadow-md sm:rounded-lg'>
-                <table className='w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400'>
-                  <thead className='text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400'>
+              <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                  <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
-                      <th scope='col' className='px-16 py-3'>
-                        <span className='sr-only'>Product image</span>
+                      <th scope="col" className="px-16 py-3">
+                        <span className="sr-only">Product image</span>
                       </th>
-                      <th scope='col' className='px-16 py-3'>
-                        <span className='sr-only'>Product name</span>
+                      <th scope="col" className="px-16 py-3">
+                        <span className="sr-only">Product name</span>
                       </th>
-                      <th scope='col' className='px-6 py-3'>
+                      <th scope="col" className="px-6 py-3">
                         Product price
                       </th>
 
-                      <th scope='col' className='px-6 py-3'>
+                      <th scope="col" className="px-6 py-3">
                         Product description
                       </th>
-                      <th scope='col' className='px-6 py-3'>
+                      <th scope="col" className="px-6 py-3">
                         Action
                       </th>
                     </tr>
@@ -195,25 +196,25 @@ const Dashboard = () => {
                     {product?.map((item, index) => (
                       <tr
                         key={index}
-                        className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'
+                        className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
                       >
-                        <td className='p-4'>
+                        <td className="p-4">
                           <img
                             src={baseURL + item?.img}
-                            alt=''
-                            className='w-[80px] h-[80px] object-cover'
+                            alt=""
+                            className="w-[80px] h-[80px] object-cover"
                           />
                         </td>
-                        <td className='p-4'>{item?.productName}</td>
-                        <td className='px-6 py-4 font-semibold text-gray-900 dark:text-white'>
+                        <td className="p-4">{item?.productName}</td>
+                        <td className="px-6 py-4 font-semibold text-gray-900 dark:text-white">
                           {item?.productPrice}
                         </td>
-                        <td className='px-6 py-4'>{item?.productDes}</td>
+                        <td className="px-6 py-4">{item?.productDes}</td>
 
-                        <td className='px-6 py-4'>
+                        <td className="px-6 py-4">
                           <span
                             onClick={() => deleteProductFun(item._id)}
-                            className='font-medium text-red-600 dark:text-red-500 hover:underline'
+                            className="font-medium text-red-600 dark:text-red-500 hover:underline"
                           >
                             Remove
                           </span>
