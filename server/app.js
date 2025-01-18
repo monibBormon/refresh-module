@@ -19,7 +19,7 @@ import {
 const app = express();
 
 // App Use Default Middleware
-// app.use(cors());
+app.use(cors());
 // app.use(
 //   cors({
 //     origin: "https://refresh-module.vercel.app",
