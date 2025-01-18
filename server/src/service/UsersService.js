@@ -1,4 +1,3 @@
-import { Cookie_EXPIRE_TIME } from "../config/config.js";
 import UserModel from "../model/UserModel.js";
 import { EncodeToken } from "../utility/TokenUtility.js";
 
@@ -40,8 +39,8 @@ export const loginService = async (req, res) => {
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
         httpOnly: false, // False means allow cookies in all browsers
         sameSite: "none",
-        secure: true,
-        path: "/",
+        secure: false,
+        // path: "/",
       };
 
       res.cookie("token", token, options);
