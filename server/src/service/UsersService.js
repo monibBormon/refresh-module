@@ -40,7 +40,7 @@ export const loginService = async (req, res) => {
         httpOnly: false, // False means allow cookies in all browsers
         sameSite: "none",
         secure: false,
-        // path: "/",
+        path: "/",
       };
 
       res.cookie("token", token, options);
