@@ -1,6 +1,7 @@
 import axios from "axios";
 import { DeleteAlert, ErrorToast, SuccessToast } from "../helper/helper";
 
+axios.defaults.withCredentials= true;
 // let baseURL = "http://localhost:5000/api";
 let baseURL = "https://refresh-module-28uk.vercel.app/api";
 
